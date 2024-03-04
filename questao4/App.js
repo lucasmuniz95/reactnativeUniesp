@@ -2,17 +2,18 @@
 import React, { useState } from "react";
 
 
-const Contador = () => {
-  const [contar, ConfigContador] = useState(0);
+const Digitado = () => {
+  const [digitado, ConfigDigitado] = useState('');
 
 
   return (
     <div>
-      <p>Contador: {contar}</p>
-      <button onClick={() => ConfigContador(contar + 1)}>Incrementar</button>
-      <button onClick={() => ConfigContador(contar - 1)}>Decrementar</button>
+      <p></p>
+      <input type="text" value={digitado} onChange={(e) => ConfigDigitado(e.target.value)} placeholder="Digite algo">
+      </input>
+      <p>O valor digitado foi <b>{digitado}</b></p>
     </div>
   )
 };
 
-export default Contador
+export default Digitado
